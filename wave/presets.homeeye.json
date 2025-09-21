@@ -1,0 +1,5 @@
+{ "name": "HomeEye – Pi5", "version": 1, "snippets": [
+{ "title": "Deploy from GitHub", "content": "scripts/wave_deploy_from_github.ps1 -User riplay -PiHost 192.168.1.50 -RepoUrl https://github.com/Aeell/HomeEye.git -Branch main -WebPort 8420 -MjpegPort 8421" },
+{ "title": "Push local to Pi", "content": "scripts/wave_push_to_pi.ps1 -User riplay -PiHost 192.168.1.50 -PiPath /home/riplay/homeeye" },
+{ "title": "Health check", "content": "scripts/wave_check.ps1 -User riplay -PiHost 192.168.1.50 -WebPort 8420 -MjpegPort 8421" }
+] }
