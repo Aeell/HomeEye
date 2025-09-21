@@ -131,6 +131,23 @@ __pypackages__/
 celerybeat-schedule
 celerybeat.pid
 
+# dependencies
+**/node_modules/
+
+
+# env files
+Raspi5/.env
+
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+
+
+# archives
+*.tgz
+*.tar.gz
+
 # SageMath parsed files
 *.sage.py
 
