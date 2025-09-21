@@ -1,0 +1,17 @@
+[Unit]
+Description=HomeEye Camera MJPEG Streamer (libcamera-vid → Node)
+After=network.target
+
+
+[Service]
+Type=simple
+User=riplay
+EnvironmentFile=/home/riplay/homeeye/Raspi5/.env
+WorkingDirectory=/home/riplay/homeeye
+ExecStart=/usr/bin/node Raspi5/camera/streamer.js
+Restart=on-failure
+RestartSec=2
+
+
+[Install]
+WantedBy=multi-user.target
