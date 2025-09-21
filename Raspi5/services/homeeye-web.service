@@ -1,0 +1,17 @@
+[Unit]
+Description=HomeEye Web UI + API (Express)
+After=network.target
+
+
+[Service]
+Type=simple
+User=riplay
+EnvironmentFile=/home/riplay/homeeye/Raspi5/.env
+WorkingDirectory=/home/riplay/homeeye/server
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+RestartSec=2
+
+
+[Install]
+WantedBy=multi-user.target
