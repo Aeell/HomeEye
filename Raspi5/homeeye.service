@@ -1,0 +1,20 @@
+[Unit]
+Description=HomeEye (Node/Express + WS)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=riplay
+WorkingDirectory=/home/riplay/HomeEye/Raspi5
+EnvironmentFile=/home/riplay/HomeEye/Raspi5/.env
+# If you use a venv or nvm, adjust ExecStart accordingly:
+ExecStart=/usr/bin/node /home/riplay/HomeEye/Raspi5/server/index.js
+Restart=on-failure
+RestartSec=3
+# Hardening (still friendly on dev)
+NoNewPrivileges=true
+# If you use a camera/FFmpeg helper, add Wants=/After= lines for those services.
+
+[Install]
+WantedBy=multi-user.target
