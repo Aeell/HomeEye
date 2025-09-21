@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HomeEye</title>
+<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<header class="topbar">
+<div class="brand">HomeEye</div>
+<div class="controls">
+<label class="switch">
+<input id="themeToggle" type="checkbox" checked>
+<span class="slider"></span>
+<span class="label">Dark</span>
+</label>
+<label class="check">
+<input id="gridToggle" type="checkbox" checked>
+<span>Grid 4×4</span>
+</label>
+<label class="check">
+<input id="tsToggle" type="checkbox" checked>
+<span>Timestamp</span>
+</label>
+<label class="check">
+<input id="boxesToggle" type="checkbox">
+<span>Show Boxes (placeholders)</span>
+</label>
+</div>
+</header>
+
+
+<main class="stage">
+<div class="video-wrap" id="videoWrap">
+<img id="mjpeg" alt="camera" />
+<canvas id="overlay"></canvas>
+<div id="timestamp" class="timestamp"></div>
+</div>
+</main>
+
+
+<footer class="foot">
+<div>
+<span id="status">Connecting…</span>
+</div>
+</footer>
+
+
+<script src="/app.js"></script>
+</body>
+</html>
