@@ -13,4 +13,4 @@ if [ "$NoRestart" = "" ]; then sudo systemctl restart homeeye-camera.service || 
 R "systemctl --no-pager --full status homeeye-web.service | tail -n 20"
 R "systemctl --no-pager --full status homeeye-camera.service | tail -n 20"
 R "curl -s http://localhost:$WebPort/healthz || true"
-Write-Host "Open: http://$PiHost:$WebPort/" -ForegroundColor Green
+Write-Host "Open: http://${PiHost}:$WebPort/" -ForegroundColor Green
