@@ -1,9 +1,11 @@
 require('dotenv').config({ path: __dirname + '/../.env' });
 
 const express = require('express');
+const helmet = require('helmet');
 const http = require('http');
 const path = require('path');
 const app = express();
+app.use(helmet());
 const server = http.createServer(app);
 
 const PORT = process.env.PORT || 8787;
