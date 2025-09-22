@@ -25,8 +25,9 @@
 </label>
 <label class="check">
 <input id="boxesToggle" type="checkbox">
-<span>Show Boxes (placeholders)</span>
+<span>Show Boxes</span>
 </label>
+<button id="snapshotBtn" class="btn">📷 Snapshot</button>
 </div>
 </header>
 
@@ -41,8 +42,12 @@
 
 
 <footer class="foot">
-<div>
+<div class="status">
+<span id="connectionStatus" class="status-indicator">🔴</span>
 <span id="status">Connecting…</span>
+</div>
+<div class="info">
+<span id="clientCount">Clients: -</span>
 </div>
 </footer>
 

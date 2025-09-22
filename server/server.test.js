@@ -24,6 +24,14 @@ jest.mock('winston', () => ({
   })
 }));
 
+// Mock database
+jest.mock('./database.js', () => ({
+  database: {
+    getRecentEvents: jest.fn(() => []),
+    getMotionEvents: jest.fn(() => [])
+  }
+}));
+
 describe('HomeEye Server', () => {
   let app;
 

@@ -26,6 +26,8 @@ body { background: var(--bg); color: var(--text); font: 14px/1.4 system-ui, -app
 .controls { display: flex; gap: 14px; align-items: center; }
 .check { display: inline-flex; align-items: center; gap: 6px; opacity: 0.9; }
 .check input { transform: translateY(1px); }
+.btn { background: var(--accent); color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 14px; }
+.btn:hover { background: var(--accent); opacity: 0.9; }
 
 
 .switch { display: inline-flex; align-items: center; gap: 8px; }
@@ -43,7 +45,10 @@ body { background: var(--bg); color: var(--text); font: 14px/1.4 system-ui, -app
 .timestamp { position: absolute; left: 12px; top: 10px; padding: 3px 8px; background: rgba(0,0,0,0.45); color: #fff; border-radius: 6px; font: 12px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 0.2px; }
 
 
-.foot { color: var(--muted); text-align: center; padding: 10px; }
+.foot { color: var(--muted); padding: 10px; display: flex; justify-content: space-between; align-items: center; }
+.status { display: flex; align-items: center; gap: 8px; }
+.status-indicator { font-size: 16px; }
+.info { font-size: 12px; }
 
 
 /* Utility */
