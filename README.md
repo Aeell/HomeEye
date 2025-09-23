@@ -431,7 +431,7 @@ HomeEye/
 
 #### Camera Not Working
 ```bash
-# Check camera is enabled
+# Check camera is enabled (legacy method)
 vcgencmd get_camera
 
 # Test camera manually
@@ -439,6 +439,26 @@ libcamera-hello
 
 # Check camera permissions
 ls -la /dev/video*
+
+# Check libcamera-vid availability
+which libcamera-vid
+command -v libcamera-vid
+```
+
+#### libcamera-vid Not Found
+If the installation script reports "libcamera-vid not found" despite `libcamera-apps` being installed, the camera may need to be enabled in `raspi-config` even on recent Raspberry Pi OS versions:
+
+```bash
+sudo raspi-config
+# Navigate to: Interfacing Options > Camera > Enable
+sudo reboot
+```
+
+After reboot, re-run the installation script. If the issue persists, check the PATH and libcamera installation:
+
+```bash
+echo $PATH
+dpkg -L libcamera-apps | grep libcamera-vid
 ```
 
 #### Services Not Starting
