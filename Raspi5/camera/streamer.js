@@ -1,8 +1,8 @@
-// CommonJS MJPEG streamer for Raspberry Pi (fallback to placeholder)
-const http = require('http');
-const { spawn } = require('child_process');
-const fs = require('fs');
-const path = require('path');
+// ES Module MJPEG streamer for Raspberry Pi (fallback to placeholder)
+import http from 'http';
+import { spawn } from 'child_process';
+import fs from 'fs';
+import path from 'path';
 
 const PORT = parseInt(process.env.MJPEG_PORT || process.env.PORT || '8421', 10);
 const BOUNDARY = 'homeeye';
