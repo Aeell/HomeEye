@@ -1,4 +1,18 @@
 [Unit]
+Description=HomeEye camera streamer
+After=network.target
+
+[Service]
+User=homeeye
+EnvironmentFile=/opt/homeeye/Raspi5/.env
+WorkingDirectory=/opt/homeeye/Raspi5/camera
+ExecStart=/usr/bin/node /opt/homeeye/Raspi5/camera/streamer.js
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+[Unit]
 Description=HomeEye Camera MJPEG Streamer (libcamera-vid → Node)
 After=network.target
 

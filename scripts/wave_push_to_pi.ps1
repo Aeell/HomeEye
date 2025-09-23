@@ -3,7 +3,7 @@ $arch = Join-Path $env:TEMP 'homeeye_push.tgz'; if(Test-Path $arch){ Remove-Item
 Write-Host 'Packing repo...' -ForegroundColor Green
 tar -czf $arch --exclude-vcs --exclude='./node_modules' --exclude='./.DS_Store' .
 Write-Host 'Uploading...' -ForegroundColor Green
-scp $arch "$User@$PiHost:/tmp/homeeye_push.tgz" | Out-Null
+scp $arch "$User@${PiHost}:/tmp/homeeye_push.tgz" | Out-Null
 Write-Host 'Installing on Pi...' -ForegroundColor Green
 $remote = @"
 set -e

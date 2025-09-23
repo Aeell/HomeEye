@@ -1,4 +1,19 @@
 [Unit]
+Description=HomeEye web server
+After=network.target
+
+[Service]
+User=homeeye
+EnvironmentFile=/opt/homeeye/Raspi5/.env
+WorkingDirectory=/opt/homeeye/server
+ExecStart=/usr/bin/node /opt/homeeye/server/server.js
+Restart=always
+RestartSec=5
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target
+[Unit]
 Description=HomeEye Web UI + API (Express)
 After=network.target
 

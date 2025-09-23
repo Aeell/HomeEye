@@ -1,0 +1,14 @@
+[Unit]
+Description=HomeEye detector (TFLite skeleton)
+After=network.target
+
+[Service]
+User=homeeye
+EnvironmentFile=/opt/homeeye/Raspi5/.env
+WorkingDirectory=/opt/homeeye/Raspi5
+ExecStart=/home/homeeye/venv/bin/python /opt/homeeye/Raspi5/detector.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
